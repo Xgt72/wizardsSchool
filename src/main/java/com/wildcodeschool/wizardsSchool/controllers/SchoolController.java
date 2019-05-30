@@ -56,4 +56,9 @@ public class SchoolController {
         return SchoolRepository.selectById(id);
     }
 
+    @DeleteMapping("api/schools/{id}")
+    public void delete(@PathVariable int id) {
+        SchoolRepository.delete(id);
+    }
+
 }
