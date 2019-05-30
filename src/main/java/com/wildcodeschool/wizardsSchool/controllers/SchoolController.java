@@ -18,10 +18,6 @@ import java.util.List;
 
 public class SchoolController {
 
-    private final static String DB_URL = "jdbc:mysql://localhost:3306/wild_db_quest?serverTimezone=GMT";
-    private final static String DB_USER = "___"; // put your mysql user
-    private final static String DB_PASSWORD = "___"; // put your database password
-
     @GetMapping("/api/schools")
     public List<School> getSchools(@RequestParam(defaultValue = "%") String chosenCountry) {
         return SchoolRepository.selectByCountry(chosenCountry);
